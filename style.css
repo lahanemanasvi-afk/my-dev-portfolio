@@ -1,8 +1,8 @@
 /* -- Root Variables (Define colors for the whole site) -- */
 :root {
-    --primary-color: #0077b6; /* Blue for highlights */
-    --secondary-color: #f4f4f9; /* Light gray background */
-    --dark-color: #333;
+    --primary-color: #009688; /* Teal/Green for highlights */
+    --secondary-color: #f0f0f5; /* Very light gray background */
+    --dark-color: #212529; /* Dark color for headers/footers */
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -38,6 +38,12 @@ a:hover {
     background-color: var(--secondary-color);
 }
 
+/* New style for Dark background sections (used in header/footer) */
+.bg-dark {
+    background-color: var(--dark-color);
+    color: white;
+}
+
 h2 {
     font-size: 2.2em;
     color: var(--primary-color);
@@ -47,11 +53,10 @@ h2 {
     display: inline-block;
 }
 
-/* **HEADER STYLE** */
+/* **HEADER STYLE (MODERATE CHANGE)** */
 .site-header {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 25px 20px;
+    /* Uses the bg-dark class applied in HTML */
+    padding: 30px 20px; /* Slightly larger padding */
     text-align: center;
 }
 
@@ -63,6 +68,18 @@ h2 {
 .tagline {
     font-style: italic;
     opacity: 0.9;
+    color: #ccc; /* Ensures tagline is visible on dark background */
+}
+
+.hero-intro { 
+    background-color: var(--secondary-color); /* Light gray highlight */
+    padding: 100px 20px; /* Increased top/bottom padding */
+}
+
+.hero-intro h2 {
+    color: var(--dark-color);
+    border-bottom: none; 
+    margin-bottom: 20px;
 }
 
 /* **ABOUT SECTION STYLE (ADJUSTED FOR NO PHOTO)** */
@@ -71,17 +88,15 @@ h2 {
     flex-direction: column; 
     align-items: center;
     gap: 40px;
-    text-align: center; /* Centering text since photo is removed */
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .about-flex {
-        flex-direction: row; /* Retained flex row for potential future content */
+        flex-direction: row; 
         text-align: left;
     }
 }
-/* *** DELETED: The .profile-photo styles are removed *** */
-
 
 /* **SKILLS SECTION STYLE** */
 .skills-grid {
@@ -112,7 +127,6 @@ h2 {
 /* **PROJECTS SECTION STYLE** */
 .project-container {
     display: grid;
-    /* Creates columns that are at least 320px wide */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
@@ -125,7 +139,7 @@ h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
-    padding: 20px 0; /* Adjusted padding for better spacing without the image */
+    padding: 20px 0;
 }
 
 .project-card:hover {
@@ -140,12 +154,12 @@ h2 {
 }
 
 .project-card h3, .project-card p, .project-link {
-    padding: 0 20px; /* Increased side padding for content */
+    padding: 0 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .project-card p {
-    padding-bottom: 20px; /* Added extra space at the bottom of the description */
+    padding-bottom: 20px;
 }
 
 /* **RESUME/ACTION BUTTON STYLE** */
@@ -166,12 +180,11 @@ h2 {
     text-decoration: none;
 }
 
-/* **FOOTER STYLE** */
 .site-footer {
-    background-color: var(--dark-color);
+    background-color: var(--dark-color); /* Now uses the dark color variable */
     color: #ccc;
     text-align: center;
-    padding: 20px;
+    padding: 30px; /* Slightly larger padding */
     font-size: 0.9em;
 }
 
